@@ -18,7 +18,7 @@ echo "◉ - Dallar güncelleniyor.."
 git merge &>/dev/null
 echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
-git commit -m "mdkn@latest - $now" &>/dev/null
+git commit -m "mdev.mdkn@latest - $now" &>/dev/null
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
 git push -f origin main &>/dev/null
