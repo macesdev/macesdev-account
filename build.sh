@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-var=$(date)
-var=`date`
+
+now=$(date +"%m-%d-%Y, "%T"")
+
 echo " "
 echo "------------- macesdev foundation -------------"
 echo "---------------- mdkn@23.1.4.7 ---------------- "
@@ -17,11 +18,12 @@ echo "◉ - Dallar güncelleniyor.."
 git merge 
 echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
-git commit -m "mdev.mdkn@latest - $var"
+git commit -m "mdkn@latest - $now"
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
 git push -f origin main
 echo "✔ - Güncellendi!"
+
 
 echo " "
 echo "Güncelleme başarılı, mdev.account.build çalıştırılmak üzere sevk ediliyor.."
