@@ -9,6 +9,7 @@ echo " "
 
 echo "◉ - Derleniyor...."
 echo preview.macesdev.net > DENEME
+echo $PWD
 echo "✔ - Derlendi!"
 
 
