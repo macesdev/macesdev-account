@@ -3,7 +3,7 @@ var=$(date)
 var=`date`
 echo " "
 echo "------------- macesdev foundation -------------"
-echo "---------------- mdkn@22.1.0.0 ---------------- "
+echo "---------------- mdkn@23.1.4.7 ---------------- "
 echo " "
 
 echo "◉ - Dosyalar güncelleniyor.."
@@ -20,7 +20,7 @@ echo "◉ - Değişiklikler temin ediliyor.."
 git commit -m "mdev.mdkn@latest - $var"
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
-git push
+git push -f origin main
 echo "✔ - Güncellendi!"
 
 echo " "
