@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "private": true,
+  "name": "macesdev account",
+  "version": "1.0.0",
+  "description": "© 2023 macesdev foundation, Inc. All Rights Reserved.",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "rel": "./build.sh"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.4.0",
+    "nuxt": "^3.2.0"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
