@@ -9,6 +9,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "ghp": "gh-pages -d dist",
     "rel": "./build.sh",
     "gen": "./gen.sh"
   },
