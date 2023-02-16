@@ -12,16 +12,16 @@ git add .
 git add -A &>/dev/null
 echo "✔ - Dosyalar güncellendi!"
 echo "◉ - Uzak değişiklikler ekleniyor.."
-git fetch 
+git fetch &>/dev/null
 echo "✔ - Değişiklikler eklendi!"
 echo "◉ - Dallar güncelleniyor.."
-git merge 
+git merge &>/dev/null
 echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
-git commit -m "mdkn@latest - $now"
+git commit -m "mdkn@latest - $now" &>/dev/null
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
-git push -f origin main
+git push -f origin main &>/dev/null
 echo "✔ - Güncellendi!"
 
 
