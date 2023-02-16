@@ -9,7 +9,7 @@ echo " "
 
 echo "◉ - Derleniyor...."
 echo preview.macesdev.net > DENEME
-echo $PWD
+npm run generate
 echo "✔ - Derlendi!"
 
 
