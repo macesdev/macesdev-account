@@ -8,21 +8,8 @@ echo "---------------- mdkn@23.1.4.7 ---------------- "
 echo " "
 
 echo "◉ - Derleniyor...."
-git add . 
-git add -A &>/dev/null
-echo "✔ - Dosyalar güncellendi!"
-echo "◉ - Uzak değişiklikler ekleniyor.."
-git fetch &>/dev/null
-echo "✔ - Değişiklikler eklendi!"
-echo "◉ - Dallar güncelleniyor.."
-git merge &>/dev/null
-echo "✔ - Dallar güncellendi!"
-echo "◉ - Değişiklikler temin ediliyor.."
-git commit -m "mdev.mdkn@latest - $now" &>/dev/null
-echo "✔ - Değişilikler eklendi!"
-echo "◉ - Güncelleniyor.."
-git push -f origin main &>/dev/null
-echo "✔ - Güncellendi!"
+echo preview.macesdev.net > DENEME
+echo "✔ - Derlendi!"
 
 
 echo " "
