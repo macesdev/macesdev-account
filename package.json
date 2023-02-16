@@ -10,7 +10,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "rel": "./build.sh"
+    "rel": "./build.sh",
+    "gen": "./gen.sh"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.0",

@@ -1,0 +1,1 @@
+echo "generate ettim işte :)"
