@@ -42,6 +42,17 @@ jobs:
       run: ls
     - name: path
       run: echo $PWD
+    - name: Bildiri yayınlanması
+      run: |
+        curl --request POST \
+        --url https://api.github.com/repos/${{ github.repository }}/issues \
+        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type: application/json' \
+        --data '{
+          "title": "New Changes - ${{ steps.date.outputs.date }}",
+          "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+        }' \
+        --fail
     - name: Bildiri yayınlanması (issue) 
       run: |
         curl --request POST \
