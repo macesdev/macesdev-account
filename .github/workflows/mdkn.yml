@@ -49,4 +49,4 @@ jobs:
     - name: gh-pages@mdkn indiriliyor..
       run: npm i gh-pages
     - name: git-test
-      name: git help
+      run: git help
