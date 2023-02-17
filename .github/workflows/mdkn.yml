@@ -42,14 +42,14 @@ jobs:
       run: ls
     - name: path
       run: echo $PWD
-    - name: Create issue using REST API
+    - name: Bildiri yayınlanması (issue) 
       run: |
         curl --request POST \
         --url https://api.github.com/repos/${{ github.repository }}/issues \
         --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
         --header 'content-type: application/json' \
         --data '{
-          "title": "Automated issue for commit: ${{ github.sha }}",
-          "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+          "title": "New Changes - ${{ steps.date.outputs.date }}",
+          "body": "New changes have been made on **account.macesdev.net** site, if you're experiencing errors, you'd better check it out!. \n\n New Changes (${{ github.sha } by ${{ github.event.pull_request.user.login }}}, \n\n yeni değişiklikler işte yaw"
           }' \
         --fail
