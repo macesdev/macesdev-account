@@ -40,7 +40,7 @@ jobs:
     - name: path
       run: echo $PWD
     - name: cd output
-      run: cd /home/runner/work/mnet-preview/mnet-preview/.output/public/
+      run: cd /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: output ls
       run: ls
 
