@@ -43,7 +43,7 @@ jobs:
     - name: path
       run: echo $PWD
     - name: Ayarlamalar..
-      run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
       run: |
         curl --request POST \
