@@ -50,6 +50,6 @@ jobs:
         --header 'content-type: application/json' \
         --data '{
           "title": "New Changes - ${{ steps.date.outputs.date }}",
-          "body": "New changes have been made on **account.macesdev.net** site, if you're experiencing errors, you'd better check it out!. \n\n New Changes ${{ github.sha }} by, \n\n yeni değişiklikler işte yaw"
+          "body": "New changes have been made on **account.macesdev.net** site, if you're experiencing errors, you'd better check it out!. \n\n New Changes ${{ github.sha }}
           }' \
         --fail
