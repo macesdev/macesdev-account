@@ -8,6 +8,7 @@ on:
     branches: [ "main" ]
 
 jobs:
+  
   derleme:
 
     runs-on: ubuntu-latest
@@ -39,12 +40,9 @@ jobs:
       run: ls
     - name: path
       run: echo $PWD
-    - name: Git Ayarları
+    - name: GitActions Ayarı.
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
       run: |
-        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-        git --version
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-        git status
-        git tag
-        git describe
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X POST -d '{"assignees": ["oldskool"]}' 
+        https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/assignees
