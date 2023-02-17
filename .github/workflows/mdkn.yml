@@ -37,9 +37,10 @@ jobs:
       run: npm run generate
     - name: main ls
       run: ls
+    - name: path
+      run: echo $PWD
     - name: cd output
       run: cd .output
     - name: output ls
       run: ls
-
 
