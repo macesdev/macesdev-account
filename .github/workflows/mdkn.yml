@@ -53,16 +53,3 @@ jobs:
           "body": "New changes have been made on **account.macesdev.net** site, if you re experiencing errors, you better check it out!. \n\n The commit hash was: _${{ github.sha }}_."
         }' \
         --fail
-    - name: Bildiri yayınlanması (issue) 
-      env:
-        ACTOR: ${ GITHUB_ACTOR }
-      run: |
-        curl --request POST \
-        --url https://api.github.com/repos/${{ github.repository }}/issues \
-        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'content-type: application/json' \
-        --data '{
-          "title": "New Changes - ${{ ACTOR }}",
-          "body": "New changes have been made on **account.macesdev.net** site, if you're experiencing errors, you'd better check it out!. \n\n New Changes ${{ github.sha }}
-          }' \
-        --fail
