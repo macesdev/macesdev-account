@@ -39,8 +39,6 @@ jobs:
       run: ls
     - name: path
       run: echo $PWD
-    - name: cd output
-      run: cd /home/runner/work/mnet-preview/mnet-preview/dist/
-    - name: output ls
-      run: ls
+    - name: Yayınlanma süreci
+      run: npm run ghp
 
