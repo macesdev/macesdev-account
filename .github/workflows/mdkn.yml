@@ -25,3 +25,15 @@ jobs:
         cache: 'npm'
     - name: NPM Yönetimi
       run: node -v
+  bagimliliklar: 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Bağımlılıklar kuruluyor..
+      run: npm install
+    - name: axios@mdkn indiriliyor..
+      run: npm i axios
+    - name: tailwind@nuxtjs indiriliyor..
+      run: npm install --save-dev @nuxtjs/tailwindcss
+    - name: gh-pages@mdkn indiriliyor..
+      run: npm i gh-pages
