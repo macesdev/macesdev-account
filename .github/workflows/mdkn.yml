@@ -25,6 +25,8 @@ jobs:
         cache: 'npm'
     - name: NPM Yönetimi
       run: node -v
+    - name: dize
+      run: ls
       
   bagimliliklar: 
     runs-on: ubuntu-latest
