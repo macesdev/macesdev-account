@@ -23,21 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: NPM Yönetimi
-      run: node -v
-    - name: dize
-      run: ls
-      
-  bagimliliklar: 
-    runs-on: ubuntu-latest
-
-    steps: 
-    - uses: actions/checkout@v3
-    - name: NodeJS Yapılandırılıyor..
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - name: NPM  Yönetimi
       run: node -v
     - name: Bağımlılıklar kuruluyor..
@@ -50,3 +35,5 @@ jobs:
       run: npm i gh-pages
     - name: git-test
       run: git help
+
+
