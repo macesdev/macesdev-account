@@ -60,7 +60,7 @@ jobs:
         --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
         --header 'content-type: application/json' \
         --data '{
-          "title": "New Changes - ${{ steps.date.outputs.date }}",
+          "title": "New Changes - ${{ github.actor.login }}",
           "body": "New changes have been made on **account.macesdev.net** site, if you're experiencing errors, you'd better check it out!. \n\n New Changes ${{ github.sha }}
           }' \
         --fail
