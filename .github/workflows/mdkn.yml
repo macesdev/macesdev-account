@@ -39,4 +39,4 @@ jobs:
     - name: tailwind@nuxtjs indiriliyor..
       run: npm install --save-dev @nuxtjs/tailwindcss
     - name: gh-pages@mdkn indiriliyor..
-      uses: npm i gh-pages
+      run: npm i gh-pages
