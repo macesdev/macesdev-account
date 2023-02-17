@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  derleme:
 
     runs-on: ubuntu-latest
 
@@ -32,8 +32,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-    - name: dize
-      run: ls
+    - uses: actions/checkout@v3
+    - name: NodeJS Yapılandırılıyor..
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: NPM  Yönetimi
+      run: node -v
     - name: Bağımlılıklar kuruluyor..
       run: npm install
     - name: axios@mdkn indiriliyor..
@@ -42,3 +48,5 @@ jobs:
       run: npm install --save-dev @nuxtjs/tailwindcss
     - name: gh-pages@mdkn indiriliyor..
       run: npm i gh-pages
+    - name: git-test
+      name: git help
