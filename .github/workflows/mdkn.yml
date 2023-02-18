@@ -45,7 +45,7 @@ jobs:
     - name: CNAME Uzantısı ekleniyor..
       run: echo preview.macesdev.net > ./dist/CNAME
     - name: MDKN Konfigüre ediliyor.
-      run: echo 'MDKN_CONFIGURATION_BRANCH # @main:latest' > ./dist/MDKN_CONFIGURATION
+      run: echo 'MDKN_CONFIGURATION_BRANCH ... main@macesdev' > ./dist/MDKN_CONFIGURATION
     - name: Yayın sıfırlanıyor..
       run: mkdir reset-fol
     - name: GiT ayarlanıyor..
