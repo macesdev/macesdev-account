@@ -54,7 +54,7 @@ jobs:
         git config --global user.email "github-actions[bot]"
         git config --global user.name "github-actions[bot]@users.noreply.github.com"
         git branch -M gh-pages
-        ls
+        echo data_template > DELETE_DATAS
         git add .
         git commit -m "RESET_DATA"
         git push -f origin gh-pages
