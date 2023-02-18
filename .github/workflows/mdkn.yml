@@ -62,7 +62,13 @@ jobs:
         --fail
     - name: Perform Checkout
       uses: actions/checkout@v2
-    - name: Yayına alma..
+    - name: Çıktının düzenlenmesi..
+      run: git add .
+    - name: Kayda geçiriliyor..
+      run: git commit -m "mdev.mdkn@runner - $NOW"
+    - name: Güncelleniyor..
+      run: git push origin main
+    - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
