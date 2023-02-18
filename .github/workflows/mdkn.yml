@@ -45,7 +45,7 @@ jobs:
       run: npm run generate
 
     - name: gen ls
-      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
+      run: ls /home/runner/work/mnet-preview/mnet-preview/.output/public/
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
@@ -67,5 +67,5 @@ jobs:
       env:
         REPO: self
         BRANCH: gh-pages
-        FOLDER: dist
+        FOLDER: .output/public
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
