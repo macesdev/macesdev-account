@@ -43,7 +43,17 @@ jobs:
       run: ls
     - name: Derleme süreci..
       run: npm run generate
-
+    - name: Perform Checkout
+      uses: actions/checkout@v2
+    - name: Site yayına alınıyor..
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: /home/runner/work/mnet-preview/mnet-preview/dist/
+        user_name: 'macesdev-mdkn[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: 'mdkn@autodeploy : $NOW'
+        publish_branch: gh-pages
     - name: gen ls
       run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: Ayarlamalar..
@@ -60,18 +70,7 @@ jobs:
           "labels":["new-update"]
         }' \
         --fail
-    - name: Perform Checkout
-      uses: actions/checkout@v2
     - name: CNAME Uzantısı ekleniyor..
       run: echo preview.macesdev.net ./dist/CNAME
     - name: ls test
       run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
-    - name: Site yayına alınıyor..
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: /home/runner/work/mnet-preview/mnet-preview/dist/
-        user_name: 'macesdev-mdkn[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'mdkn@autodeploy : $NOW'
-        publish_branch: gh-pages
