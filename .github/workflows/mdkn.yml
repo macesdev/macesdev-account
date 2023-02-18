@@ -43,6 +43,8 @@ jobs:
       run: ls
     - name: Derleme süreci..
       run: npm run generate
+    - name: gen ls
+      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: Perform Checkout
       uses: actions/checkout@v2
     - name: Site yayına alınıyor..
@@ -54,8 +56,7 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         commit_message: 'mdkn@autodeploy : $NOW'
         publish_branch: gh-pages
-    - name: gen ls
-      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
+
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
