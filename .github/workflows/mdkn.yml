@@ -62,7 +62,7 @@ jobs:
         --fail
     - name: Perform Checkout
       uses: actions/checkout@v2
-    - name: Deploy
+    - name: Yayına alma..
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
