@@ -40,12 +40,17 @@ jobs:
       run: npm install --save-dev @nuxtjs/tailwindcss
     - name: gh-pages@mdkn indiriliyor..
       run: npm i gh-pages
-    - name: main ls
-      run: ls
     - name: Derleme süreci..
       run: npm run generate
-    - name: gen ls
-      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
+    - name: CNAME Uzantısı ekleniyor..
+      run: echo preview.macesdev.net ./dist/CNAME
+    - name: GiT ayarlanıyor..
+      run: |
+        git config --global user.email "email@gmail.com"
+        git config --global user.name "github actions"
+        git add .
+        git commit -m "chore: clean repo"
+        git push
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -70,7 +75,3 @@ jobs:
           "labels":["new-update"]
         }' \
         --fail
-    - name: CNAME Uzantısı ekleniyor..
-      run: echo preview.macesdev.net ./dist/CNAME
-    - name: ls test
-      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
