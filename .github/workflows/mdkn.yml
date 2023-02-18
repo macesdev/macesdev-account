@@ -62,6 +62,10 @@ jobs:
         --fail
     - name: Perform Checkout
       uses: actions/checkout@v2
+    - name: CNAME Uzantısı ekleniyor..
+      run: echo preview.macesdev.net ./dist/CNAME
+    - name: ls test
+      run: ls ./dist
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
