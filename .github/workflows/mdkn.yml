@@ -45,7 +45,7 @@ jobs:
       run: npm run generate
 
     - name: gen ls
-      run: ls /home/runner/work/mnet-preview/mnet-preview/.output/public/
+      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
@@ -65,7 +65,7 @@ jobs:
     - name: CNAME Uzantısı ekleniyor..
       run: echo preview.macesdev.net ./dist/CNAME
     - name: ls test
-      run: ls ./dist
+      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
