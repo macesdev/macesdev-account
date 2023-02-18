@@ -61,11 +61,8 @@ jobs:
         --fail
     - name: Perform ayarlanıyor..
       uses: actions/checkout@master
-    - name: Yayınlanıyor..
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: self
-        BRANCH: gh-pages
-        FOLDER: ./dist
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    - name: Yayına alma..
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
