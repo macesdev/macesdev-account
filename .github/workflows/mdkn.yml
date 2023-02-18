@@ -39,10 +39,11 @@ jobs:
       run: npm install --save-dev @nuxtjs/tailwindcss
     - name: gh-pages@mdkn indiriliyor..
       run: npm i gh-pages
-    - name: Derleme süreci..
-      run: npm run generate
     - name: main ls
       run: ls
+    - name: Derleme süreci..
+      run: npm run generate
+
     - name: path
       run: echo $PWD
     - name: Ayarlamalar..
