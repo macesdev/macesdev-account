@@ -52,6 +52,6 @@ jobs:
         --header 'content-type: application/json' \
         --data '{
           "title": "New Changes - '"$NOW"'",
-          "body": "New changes have been made on **account.macesdev.net** site, if you re experiencing errors, you better check it out!. \n\n The commit hash was: _${{ github.sha }}_."
+          "body": "New changes have been made on **account.macesdev.net** site, if you re experiencing errors, you better check it out!. \n\n New changes has made (${{ github.sha }}). \n\n"
         }' \
         --fail
