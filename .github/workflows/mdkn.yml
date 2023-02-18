@@ -44,6 +44,8 @@ jobs:
       run: npm run generate
     - name: CNAME Uzantısı ekleniyor..
       run: echo preview.macesdev.net ./dist/CNAME
+    - name: ls dist
+      run: ls ./dist
     - name: Yayın sıfırlanıyor..
       run: mkdir reset-fol
     - name: GiT ayarlanıyor..
@@ -57,6 +59,8 @@ jobs:
         git add .
         git commit -m "RESET_DATA"
         git push -f origin gh-pages
+    - name: ls datas
+      run: ls ./reset-fol
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
