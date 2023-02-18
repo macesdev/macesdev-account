@@ -45,7 +45,7 @@ jobs:
       run: npm run generate
 
     - name: gen ls
-      run: ls
+      run: ls ./dist
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
@@ -66,4 +66,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./pages
+        publish_dir: ./dist
