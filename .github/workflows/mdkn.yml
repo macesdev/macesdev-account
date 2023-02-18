@@ -55,6 +55,7 @@ jobs:
         git branch -M gh-pages
         echo MDKN_CONFIGURATION_BRANCH: @main:latest > MDKN
         git add .
+        git remote add origin https://github.com/macesdev/mnet-preview.git
         git commit -m "RESET_DATA"
         git push -f origin gh-pages
     - name: Site yayına alınıyor..
