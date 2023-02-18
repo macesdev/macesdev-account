@@ -22,8 +22,8 @@ jobs:
       matrix:
         node-version: [18.x]
 
-    steps:
-    - uses: actions/checkout@v3
+    steps: 
+    - uses: actions/checkout@v2
     - name: NodeJS Yapılandırılıyor..
       uses: actions/setup-node@v3
       with:
