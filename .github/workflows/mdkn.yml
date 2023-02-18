@@ -66,7 +66,7 @@ jobs:
         commit_message: 'mdkn@autodeploy : $NOW'
         publish_branch: gh-pages
 
-    - name: Ayarlamalar..
+    - name: Düzenlemeler..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
       run: |
