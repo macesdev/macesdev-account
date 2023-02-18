@@ -43,9 +43,9 @@ jobs:
     - name: Derleme süreci..
       run: npm run generate
     - name: CNAME Uzantısı ekleniyor..
-      run: echo preview.macesdev.net ./dist/CNAME
-    - name: ls dist
-      run: ls ./dist
+      run: echo preview.macesdev.net > ./dist/CNAME
+    - name: MDKN Konfigüre ediliyor.
+      run: echo 'MDKN_CONFIGURATION_BRANCH # @main:latest' > MDKN
     - name: Yayın sıfırlanıyor..
       run: mkdir reset-fol
     - name: GiT ayarlanıyor..
@@ -54,7 +54,6 @@ jobs:
         git config --global user.email "github-actions[bot]"
         git config --global user.name "github-actions[bot]@users.noreply.github.com"
         git branch -M gh-pages
-        echo MDKN_CONFIGURATION_BRANCH: @main:latest > MDKN
         ls
         git add .
         git commit -m "RESET_DATA"
