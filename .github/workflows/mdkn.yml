@@ -44,8 +44,8 @@ jobs:
     - name: Derleme süreci..
       run: npm run generate
 
-    - name: path
-      run: echo $PWD
+    - name: gen ls
+      run: ls
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
