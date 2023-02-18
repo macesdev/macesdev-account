@@ -50,8 +50,8 @@ jobs:
       run: |
         cd reset-fol
         git init
-        git config --global user.email "email@gmail.com"
-        git config --global user.name "github actions"
+        git config --global user.email "github-actions[bot]"
+        git config --global user.name "github-actions[bot]@users.noreply.github.com"
         git branch -M gh-pages
         echo MDKN_CONFIGURATION_BRANCH: @main:latest > MDKN
         git add .
@@ -63,7 +63,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
-        user_name: 'macesdev-mdkn[bot]'
+        user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         commit_message: 'mdkn@autodeploy : $NOW'
         publish_branch: gh-pages
