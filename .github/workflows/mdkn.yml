@@ -45,7 +45,7 @@ jobs:
       run: npm run generate
 
     - name: gen ls
-      run: ls ./dist
+      run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
     - name: Ayarlamalar..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
     - name: Bildiri yayınlanması
