@@ -23,6 +23,7 @@ jobs:
         node-version: [18.x]
 
     steps: 
+  
     - uses: actions/checkout@v2
     - name: NodeJS Yapılandırılıyor..
       uses: actions/setup-node@v3
@@ -45,8 +46,6 @@ jobs:
       run: npm run generate
     - name: gen ls
       run: ls /home/runner/work/mnet-preview/mnet-preview/dist/
-    - name: Perform Checkout
-      uses: actions/checkout@v2
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
