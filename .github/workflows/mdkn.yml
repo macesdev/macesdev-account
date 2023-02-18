@@ -56,5 +56,9 @@ jobs:
           "labels":["new-update"]
         }' \
         --fail
-    - name: Yayınlanması..
-      run: npm run ghp
+    - name: Yayınlanıyor..
+      uses: peaceiris/actions-gh-pages@v3.9.2
+      with: 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+
