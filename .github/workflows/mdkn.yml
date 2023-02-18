@@ -62,17 +62,11 @@ jobs:
         --fail
     - name: Perform Checkout
       uses: actions/checkout@v2
-    - name: Çıktının düzenlenmesi..
-      run: git add .
-    - name: Kayda geçiriliyor..
-      run: git commit -m "mdev.mdkn@runner - $NOW"
-    - name: Güncelleniyor..
-      run: git push origin main
     - name: Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: /home/runner/work/mnet-preview/mnet-preview/dist/
         user_name: 'macesdev-mdkn[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         commit_message: 'mdkn@autodeploy : $NOW'
