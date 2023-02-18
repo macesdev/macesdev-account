@@ -53,6 +53,7 @@ jobs:
         git config --global user.name "github-actions[bot]@users.noreply.github.com"
         git branch -M gh-pages
         echo MDKN_CONFIGURATION_BRANCH: @main:latest > MDKN
+        ls
         git add .
         git commit -m "RESET_DATA"
         git push -f origin gh-pages
