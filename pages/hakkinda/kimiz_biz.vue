@@ -1,3 +1,1 @@
-<template>
-    Gerçekten, kimiz biz?
-</template>
+<template>Kimsin olm sen</template>
