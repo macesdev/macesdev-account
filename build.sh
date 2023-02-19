@@ -15,13 +15,13 @@ echo "◉ - Uzak değişiklikler ekleniyor.."
 git fetch &>/dev/null
 echo "✔ - Değişiklikler eklendi!"
 echo "◉ - Dallar güncelleniyor.."
-git merge &>/dev/null
+git pull &>/dev/null
 echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
 git commit -m "mdev.mdkn@latest - $now" &>/dev/null
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
-git push -f origin main &>/dev/null
+git push origin main &>/dev/null
 echo "✔ - Güncellendi!"
 
 
