@@ -20,7 +20,7 @@ echo "◉ - Değişiklikler temin ediliyor.."
 git commit -m "mdev.mdkn@latest - $now" 
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
-git push -f origin main 
+git push -f fss main 
 echo "✔ - Güncellendi!"
 
 
