@@ -379,6 +379,7 @@ export default {
   mounted() {
     const route = useRoute();
     console.log(route);
+    console.log("sa");
 
     if (this.$route.fullPath == "/user/settings") {
       this.selectedPage = "settings";
