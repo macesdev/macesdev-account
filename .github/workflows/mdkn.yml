@@ -57,8 +57,6 @@ jobs:
         git add .
         git commit -m "RESET_DATA"
         git push -f origin gh-pages
-    - name: ls datas
-      run: ls ./reset-fol
     - name: fw - Site yayına alınıyor..
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -71,7 +69,7 @@ jobs:
 
     - name: fw - Düzenlemeler..
       run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
-    - name: Bildiri yayınlanması
+    - name: fw - Bildiri yayınlanması
       run: |
         curl --request POST \
         --url https://api.github.com/repos/${{ github.repository }}/issues \
