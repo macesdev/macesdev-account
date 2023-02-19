@@ -56,14 +56,14 @@ jobs:
           git push -f origin gh-pages
       - name: fw - Site yayına alınıyor..
         uses: peaceiris/actions-gh-pages@v3
-        env: 
+        env:
           date: ${ NOW }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_message: "mdkn@autodeploy : $date"
+          commit_message: "mdkn@autodeploy : m.website.account"
           publish_branch: gh-pages
 
       - name: fw - Düzenlemeler..
