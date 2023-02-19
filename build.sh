@@ -9,19 +9,19 @@ echo " "
 
 echo "◉ - Dosyalar güncelleniyor.."
 git add . 
-git add -A &>/dev/null
+git add -A 
 echo "✔ - Dosyalar güncellendi!"
 echo "◉ - Uzak değişiklikler ekleniyor.."
-git fetch &>/dev/null
+git fetch 
 echo "✔ - Değişiklikler eklendi!"
 echo "◉ - Dallar güncelleniyor.."
-git pull &>/dev/null
+git pull 
 echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
-git commit -m "mdev.mdkn@latest - $now" &>/dev/null
+git commit -m "mdev.mdkn@latest - $now" 
 echo "✔ - Değişilikler eklendi!"
 echo "◉ - Güncelleniyor.."
-git push origin main &>/dev/null
+git push origin main 
 echo "✔ - Güncellendi!"
 
 
