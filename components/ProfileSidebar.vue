@@ -78,7 +78,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <NuxtLink to="/profile">
+        <NuxtLink to="/">
           <li v-if="selectedPage == 'main'">
             <a
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-100 bg-gray-700"
