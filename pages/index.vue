@@ -25,6 +25,10 @@ onMounted(() => {
     <div>
       <Head>
         <Title>Profilim</Title>
+        <Style
+          type="text/css"
+          children="body { background-color: #111827; }"
+        ></Style>
       </Head>
     </div>
 
@@ -286,6 +290,7 @@ onMounted(() => {
 <script>
 export default {
   name: "Profile",
+
   data() {
     return {
       updatePassword: null,

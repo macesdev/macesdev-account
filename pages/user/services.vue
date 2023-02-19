@@ -1,6 +1,14 @@
 <template>
   <ProfileSidebar />
-
+  <div>
+    <Head>
+      <Title>Servisler</Title>
+      <Style
+        type="text/css"
+        children="body { background-color: #111827; }"
+      ></Style>
+    </Head>
+  </div>
   <div class="p-4 sm:ml-64">
     <div
       class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"

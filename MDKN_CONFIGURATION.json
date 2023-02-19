@@ -1,5 +1,5 @@
 {
   "version": 0,
   "mdkn_version": "23.1.4.2",
-  "generate": "npm run generate"
+  "src": "./mdkn"
 }
