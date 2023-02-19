@@ -63,7 +63,7 @@ jobs:
           publish_dir: ./dist
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_message: "mdkn@autodeploy : ${ NOW }"
+          commit_message: "mdkn@autodeploy : $date"
           publish_branch: gh-pages
 
       - name: fw - Düzenlemeler..
