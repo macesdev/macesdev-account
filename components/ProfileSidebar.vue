@@ -78,7 +78,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <NuxtLink to="/">
+        <div>
           <li v-if="selectedPage == 'main'">
             <a
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-100 bg-gray-700"
@@ -101,6 +101,7 @@ onMounted(() => {
           </li>
           <li v-if="selectedPage != 'main'">
             <a
+              href="/"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
             >
               <svg
@@ -119,12 +120,11 @@ onMounted(() => {
               <span class="flex-1 ml-3 whitespace-nowrap">Profilim</span>
             </a>
           </li>
-        </NuxtLink>
+        </div>
 
-        <NuxtLink to="/user/services">
+        <div>
           <li v-if="selectedPage == 'services'">
             <a
-              href="#"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-100 bg-gray-700"
             >
               <svg
@@ -147,7 +147,7 @@ onMounted(() => {
           </li>
           <li v-if="selectedPage != 'services'">
             <a
-              href="#"
+              href="/user/services"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
             >
               <svg
@@ -168,12 +168,11 @@ onMounted(() => {
               >
             </a>
           </li>
-        </NuxtLink>
+        </div>
 
-        <NuxtLink to="/user/notifications">
+        <div>
           <li v-if="selectedPage == 'notifications'">
             <a
-              href="#"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-700"
             >
               <svg
@@ -194,7 +193,7 @@ onMounted(() => {
 
           <li v-if="selectedPage != 'notifications'">
             <a
-              href="#"
+              href="/user/notifications"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
             >
               <svg
@@ -212,9 +211,9 @@ onMounted(() => {
               <span class="flex-1 ml-3 whitespace-nowrap">Bildirimler</span>
             </a>
           </li>
-        </NuxtLink>
+        </div>
 
-        <NuxtLink to="/user/settings">
+        <div>
           <li v-if="selectedPage == 'settings'">
             <a
               href="#"
@@ -239,7 +238,7 @@ onMounted(() => {
 
           <li v-if="selectedPage != 'settings'">
             <a
-              href="#"
+              href="/user/settings"
               class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
             >
               <svg
@@ -258,7 +257,7 @@ onMounted(() => {
               <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
             </a>
           </li>
-        </NuxtLink>
+        </div>
       </ul>
       <ul
         class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
@@ -374,7 +373,7 @@ export default {
   name: "ProfileSidebar",
   data() {
     return {
-      selectedPage: "main",
+      selectedPage: null,
     };
   },
   mounted() {
@@ -383,7 +382,7 @@ export default {
 
     if (this.$route.fullPath == "/user/settings") {
       this.selectedPage = "settings";
-    } else if (this.$route.fullPath == "/profile") {
+    } else if (this.$route.fullPath == "/") {
       this.selectedPage = "main";
     } else if (this.$route.fullPath == "/user/notifications") {
       this.selectedPage = "notifications";
