@@ -5,14 +5,12 @@ name: MDKN Derlemesi
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-  
   derleme:
-
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       issues: write
       pull-requests: write
       contents: write
@@ -22,62 +20,61 @@ jobs:
       matrix:
         node-version: [18.x]
 
-    steps: 
-  
-    - uses: actions/checkout@v2
-    - name: fw - NodeJS Yapılandırılıyor..
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: fw - NPM Yönetimi
-      run: node -v
-    - name: fw - Bağımlılıklar kuruluyor..
-      run: npm install
-    - name: fw - Modüller Kuruluyor..
-      run: |
-        npm i axios
-        npm install --save-dev @nuxtjs/tailwindcss
-        npm i gh-pages
-    - name: fw - Derleme süreci..
-      run: npm run generate
-    - name: fw - CNAME özelleştiriliyor..
-      run: echo preview.macesdev.net > ./dist/CNAME
-    - name: fw - MDKN Konfigüre ediliyor.
-      run: echo 'MDKN_CONFIGURATION_BRANCH ... main@macesdev' > ./dist/MDKN_CONFIGURATION
-    - name: fw - Yayın sıfırlanıyor..
-      run: mkdir reset-fol
-    - name: fw - GiT ayarlanıyor..
-      run: |
-        cd reset-fol
-        git config --global user.email "github-actions[bot]"
-        git config --global user.name "github-actions[bot]@users.noreply.github.com"
-        git branch -M gh-pages
-        echo data_template > DELETE_DATAS
-        git add .
-        git commit -m "RESET_DATA"
-        git push -f origin gh-pages
-    - name: fw - Site yayına alınıyor..
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'mdkn@autodeploy : $NOW'
-        publish_branch: gh-pages
+    steps:
+      - uses: actions/checkout@v2
+      - name: fw - NodeJS Yapılandırılıyor..
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: fw - NPM Yönetimi
+        run: node -v
+      - name: fw - Bağımlılıklar kuruluyor..
+        run: npm install
+      - name: fw - Modüller Kuruluyor..
+        run: |
+          npm i axios
+          npm install --save-dev @nuxtjs/tailwindcss
+          npm i gh-pages
+      - name: fw - Derleme süreci..
+        run: npm run generate
+      - name: fw - CNAME özelleştiriliyor..
+        run: echo account.macesdev.net > ./dist/CNAME
+      - name: fw - MDKN Konfigüre ediliyor.
+        run: echo 'MDKN_CONFIGURATION_BRANCH ... main@macesdev' > ./dist/MDKN_CONFIGURATION
+      - name: fw - Yayın sıfırlanıyor..
+        run: mkdir reset-fol
+      - name: fw - GiT ayarlanıyor..
+        run: |
+          cd reset-fol
+          git config --global user.email "github-actions[bot]"
+          git config --global user.name "github-actions[bot]@users.noreply.github.com"
+          git branch -M gh-pages
+          echo data_template > DELETE_DATAS
+          git add .
+          git commit -m "RESET_DATA"
+          git push -f origin gh-pages
+      - name: fw - Site yayına alınıyor..
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: 'mdkn@autodeploy : "$NOW"'
+          publish_branch: gh-pages
 
-    - name: fw - Düzenlemeler..
-      run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
-    - name: fw - Bildiri yayınlanması
-      run: |
-        curl --request POST \
-        --url https://api.github.com/repos/${{ github.repository }}/issues \
-        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'content-type: application/json' \
-        --data '{
-          "title": "New Changes - '"$NOW"'",
-          "body": "New changes have been made on **account.macesdev.net** site, if you re experiencing errors, you better check it out!. \n\n _Update Logs_ (${{ github.sha }} by **@mamiiblt**). \n\n ```${{github.event.commits[0].message}}```",
-          "labels":["new-update"]
-        }' \
-        --fail
+      - name: fw - Düzenlemeler..
+        run: echo "NOW=$(date +'%m-%d-%Y, '%T'')" >> $GITHUB_ENV
+      - name: fw - Bildiri yayınlanması
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "New Changes - '"$NOW"'",
+            "body": "New changes have been made on **account.macesdev.net** site, if you re experiencing errors, you better check it out!. \n\n _Update Logs_ (${{ github.sha }} by **@mamiiblt**). \n\n ```${{github.event.commits[0].message}}```",
+            "labels":["new-update"]
+          }' \
+          --fail
