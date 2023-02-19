@@ -1,4 +1,10 @@
 <template>
+  <div>
+    <Head>
+      <Title>Giriş Yap</Title>
+    </Head>
+  </div>
+
   <section class="bg-gray-50 dark:bg-gray-900">
     <div v-if="state">
       <div
