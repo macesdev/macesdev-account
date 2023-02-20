@@ -78,27 +78,34 @@ export default {
   },
   computed: {
     getTheme() {
-      if (localStorage.getItem("theme") == true) {
-        this.checked = true,
+      if (this.checked == false) {
+        return "Koyu"
+      } else { 
         return "Açık"
-      } else {
-        document.documentElement.classList.remove("dark");
       }
-    },
+    }
   },
   mounted() {
-    if (localStorage.getItem("theme") == true) {
-      document.documentElement.classList.add("dark");
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+       document.documentElement.classList.add('dark')
+       this.checked = false;
     } else {
-      document.documentElement.classList.remove("dark");
+       document.documentElement.classList.remove('dark')
+       this.checked = true;
     }
   },
   methods: {
     changeTheme() {
-      this.checked = !this.checked;
-      console.log(this.checked);
+      if (this.checked == true) {
+        localStorage.theme = 'light'
+      } else {
+        localStorage.theme = 'dark'
+      }
 
-      localStorage.setItem("theme", this.checked);
+      this.checked = !this.checked;
+      
+
+      
     },
   },
 };
