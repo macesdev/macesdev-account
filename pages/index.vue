@@ -312,6 +312,17 @@ export default {
     console.log("created");
   },
   mounted() {
+    /* THEME APPLY */
+    /*if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }*/
+
     const route = useRouter();
 
     let request = {
